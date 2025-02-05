@@ -7,7 +7,7 @@ with open("model.pkl", "rb") as f:
     lrc = pickle.load(f)
 
 age = st.slider("Age", 20, 144, 30)
-gender = st.radio("Gender", ("Male", "Female"))
+gender = st.radio("Gender", ("Male", "Female"), disabled = True)
 education = st.selectbox("Education", ('High School', 'Associate', 'Bachelor', 'Master', 'Doctorate'), placeholder = "Select your educational qualification")
 # income = 
 # experiance = 
