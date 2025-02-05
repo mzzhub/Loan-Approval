@@ -17,5 +17,22 @@ type = st.selectbox("**Loan type**", ('Education', 'Medical', 'Home improvement'
 rate = st.number_input("**Intrest rate**", 5.00, 20.00)
 cbl = st.number_input("**Credit History Length**", 2, 30, help = "Credit Bureau's credit history length")
 credit_score = st.number_input("**Credit score**", 390, 850)
-defaults = st.radio("**Black mark**", ("Yes", "No"), help = "Previous loan repay faliure on record")
+previous_defaults = st.radio("**Black mark**", ("Yes", "No"), help = "Previous loan repay faliure on record")
 
+dict_input = {
+    'person_age' : age,
+    'person_gender' : gender,
+    'person_education' : education,
+    'person_income' : income,
+    'person_emp_exp' : experience,
+    'person_home_ownership' : ownership,
+    'loan_amnt' : amount,
+    'loan_intent' : type,
+    'loan_int_rate' : rate,
+    'cb_person_cred_hist_length' : cbl,
+    'credit_score' : credit_score,
+    'previous_loan_defaults_on_file' : previous_defaults
+    }
+
+df_input = pd.DataFrame(dict_input)
+st.write(df_input)
