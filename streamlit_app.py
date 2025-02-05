@@ -40,4 +40,4 @@ df_input = pd.DataFrame([dict_input])
 st.write("From dictonary")
 st.dataframe(df_input)
 
-st.write(df_input.info())
+df_input.info()
