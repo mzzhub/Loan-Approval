@@ -36,4 +36,4 @@ dict_input = {
     }
 
 df_input = pd.DataFrame([dict_input])
-st.dataframe(df_input)
+st.dataframe("from dictonary", df_input)
