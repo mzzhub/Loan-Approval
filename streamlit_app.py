@@ -18,3 +18,4 @@ rate = st.number_input("**Intrest rate**", 5.00, 20.00)
 cbl = st.number_input("**Credit History Length**", 2, 30, help = "Credit Bureau's credit history length")
 credit_score = st.number_input("**Credit score**", 390, 850)
 defaults = st.radio("**Black mark**", ("Yes", "No"), help = "Previous loan repay faliure on record")
+
