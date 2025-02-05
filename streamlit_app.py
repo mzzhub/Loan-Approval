@@ -35,5 +35,5 @@ dict_input = {
     'previous_loan_defaults_on_file' : previous_defaults
     }
 
-df_input = pd.DataFrame(dict_input)
+df_input = pd.DataFrame([dict_input])
 st.dataframe(df_input)
