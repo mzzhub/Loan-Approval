@@ -59,6 +59,7 @@ for col in feature_columns:
 drop_first_columns = ["person_gender_Female", "person_education_Associate", "person_home_ownership_Mortage", "loan_intent_Debt consolidation"]
 for i in drop_first_columns:
     if i in df_dummies.columns:
+        st.write("hai")
         df_dummies.drop(i, axis = 1)
 
 st.write("after dummies")
