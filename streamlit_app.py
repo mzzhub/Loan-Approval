@@ -15,6 +15,6 @@ ownership = st.selectbox("**House ownership**", ('Own', 'Mortage', 'Rent', 'Othe
 amount = st.number_input("**Requried loan amount**", 500, 35000, help = "in dollars")
 type = st.selectbox("**Loan type**", ('Education', 'Medical', 'Home improvement', 'Debt consolidation', 'Personal', 'Venture'), placeholder = "Select your purpose of loan", index = None)
 rate = st.number_input("**Intrest rate**", 5.00, 20.00)
-# cbl = "Credit Bureau: Person's Credit History Length"
+cbl = st.number_input("Credit History Length", 2, 30, help = "Credit Bureau's credit history length")
 # credit_score = 
 # defaults = "Previous Loan Defaults on File"
