@@ -59,4 +59,4 @@ for col in feature_columns:
 st.write("after dummies")
 st.dataframe(df_dummies)
 
-st.write(138/4)
+st.write(143/3)
