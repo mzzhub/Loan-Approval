@@ -36,4 +36,4 @@ dict_input = {
     }
 
 df_input = pd.DataFrame(dict_input)
-st.write(df_input)
+st.table(df_input)
