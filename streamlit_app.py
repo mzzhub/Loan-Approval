@@ -45,7 +45,7 @@ df_dummies = pd.get_dummies(df_input, columns = object_columns)
 
 feature_columns = ['person_age', 'person_income', 'person_emp_exp', 'loan_amnt',
        'loan_int_rate', 'cb_person_cred_hist_length', 'credit_score',
-       'loan_status', 'person_gender_Male', 'person_education_Bachelor',
+       'person_gender_Male', 'person_education_Bachelor',
        'person_education_Doctorate', 'person_education_High School',
        'person_education_Master', 'person_home_ownership_Other',
        'person_home_ownership_Own', 'person_home_ownership_Rent',
