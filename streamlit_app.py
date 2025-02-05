@@ -65,4 +65,10 @@ st.write("after dummies")
 st.dataframe(df_dummies)
 
 st.write(df_dummies.columns)
-st.write(lrc.predict(df_dummies))
+output = lrc.predict(df_dummies)
+st.write(output)
+
+if output:
+    st.write("Approved")
+else:
+    st.write("Not approved")
