@@ -43,5 +43,18 @@ st.dataframe(df_input)
 object_columns = df_input.select_dtypes(include = ["object"]).columns
 df_dummies = pd.get_dummies(df_input, columns = object_columns)
 
+feature_columns = ['person_age', 'person_income', 'person_emp_exp', 'loan_amnt',
+       'loan_int_rate', 'cb_person_cred_hist_length', 'credit_score',
+       'loan_status', 'person_gender_Male', 'person_education_Bachelor',
+       'person_education_Doctorate', 'person_education_High School',
+       'person_education_Master', 'person_home_ownership_Other',
+       'person_home_ownership_Own', 'person_home_ownership_Rent',
+       'loan_intent_Education', 'loan_intent_Home improvement',
+       'loan_intent_Medical', 'loan_intent_Personal', 'loan_intent_Venture',
+       'previous_loan_defaults_on_file_Yes']
+for col in feature_columns:
+    if col not in df_dummies.columns:
+        df_dummies[col] = 0
+
 st.write("after dummies")
 st.dataframe(df_dummies)
