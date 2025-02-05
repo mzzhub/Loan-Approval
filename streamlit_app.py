@@ -40,4 +40,8 @@ df_input = pd.DataFrame([dict_input])
 st.write("From dictonary")
 st.dataframe(df_input)
 
-df_input.info()
+object_columns = df_input.select_dtypes(include = ["object"]).columns
+df_dummies = pd.get_dummies(df_input, columns = object_columns, drop_first = True)
+
+st.write("after dummies")
+st.dataframe(df_dummies)
