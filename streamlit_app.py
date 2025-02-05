@@ -68,7 +68,7 @@ st.write(df_dummies.columns)
 output = lrc.predict(df_dummies)
 st.write(output)
 
-if output:
+if output == 1:
     st.write("Approved")
 else:
     st.write("Not approved")
