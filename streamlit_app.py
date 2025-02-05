@@ -59,4 +59,4 @@ for col in feature_columns:
 st.write("after dummies")
 st.dataframe(df_dummies)
 
-st.write(lrc.predict(df_summies))
+st.write(lrc.predict(df_dummies))
