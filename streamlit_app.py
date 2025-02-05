@@ -1,5 +1,7 @@
 import streamlit as st
+import pickle
 
-st.title('🎈 App Name')
+st.title('Loan Eligiblity Test')
 
-st.write('Hello world!')
+with open("model.pkl", "rb") as f:
+    lrc = pickle.load(f)
