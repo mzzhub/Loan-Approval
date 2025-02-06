@@ -52,6 +52,9 @@ feature_columns = ['person_age', 'person_income', 'person_emp_exp', 'loan_amnt',
        'loan_intent_Education', 'loan_intent_Home improvement',
        'loan_intent_Medical', 'loan_intent_Personal', 'loan_intent_Venture',
        'previous_loan_defaults_on_file_Yes']
+
+df_dummies = df_dummies.reindex(columns = feature_columns, fill_value = 0)
+
 for col in feature_columns:
     if col not in df_dummies.columns:
         df_dummies[col] = 0
