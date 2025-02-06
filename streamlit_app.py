@@ -54,15 +54,23 @@ feature_columns = ['person_age', 'person_income', 'person_emp_exp', 'loan_amnt',
        'previous_loan_defaults_on_file_Yes']
 
 df_dummies = df_dummies.reindex(columns = feature_columns, fill_value = 0)
+st.write("after reindex")
+st.dataframe(df_dummies)
 
 for col in feature_columns:
     if col not in df_dummies.columns:
         df_dummies[col] = 0
 
+st.write("after for loop 01")
+st.dataframe(df_dummies)
+
 drop_first_columns = ["person_gender_Female", "person_education_Associate", "person_home_ownership_Mortage", "loan_intent_Debt consolidation", "previous_loan_defaults_on_file_No"]
 for i in drop_first_columns:
     if i in df_dummies.columns:
         df_dummies = df_dummies.drop(i, axis = 1)
+
+st.write("after for loop 02")
+st.dataframe(df_dummies)
 
 st.write("after dummies")
 st.dataframe(df_dummies)
