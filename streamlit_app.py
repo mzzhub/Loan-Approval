@@ -4,7 +4,7 @@ import pandas as pd
 
 st.title('Loan Eligiblity Test')
 
-with open("model.pkl", "rb") as f:
+with open("best_model.pkl", "rb") as f:
     lrc = pickle.load(f)
 
 age = st.slider("**Age**", 20, 144, 30)
@@ -34,9 +34,6 @@ dict_input = {
     'credit_score' : credit_score,
     'previous_loan_defaults_on_file' : previous_defaults
     }
-
-for i in dict_input.values:
-    st.write(type(i))
 
 df_input = pd.DataFrame([dict_input])
 
