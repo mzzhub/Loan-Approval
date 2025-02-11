@@ -4,7 +4,7 @@ import pandas as pd
 
 st.title('Loan Eligiblity Test')
 
-with open("best_model.pkl", "rb") as f:
+with open("kaggle_model.pkl", "rb") as f:
     lrc = pickle.load(f)
 
 age = st.slider("**Age**", 20, 144, 30)
