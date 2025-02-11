@@ -116,6 +116,8 @@ for i in drop_first_columns:
 #         output_placeholder.empty()  # Clears the displayed prediction
 
 
+st.write("")  # Adds a blank line
+st.write("")  # Adds another blank line
 
 # Center align buttons
 col1, col2, col3 = st.columns([1, 2, 1])
