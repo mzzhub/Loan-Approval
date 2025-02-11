@@ -122,7 +122,6 @@ col1, col2, col3 = st.columns([1, 2, 1])
 
 with col2:
     predict_button = st.button("Predict", use_container_width=True)
-    clear_button = st.button("Clear", use_container_width=True)
 
 if predict_button:
     # Make predictions
@@ -155,5 +154,7 @@ if predict_button:
         use_container_width=True
     )
 
-    if clear_button:
-        st.experimental_rerun()  # Clears predictions by rerunning the app
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        predict_button = st.button("Predict", use_container_width=True)
+        clear_button = st.button("Clear", use_container_width=True)
