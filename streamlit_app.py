@@ -76,10 +76,37 @@ for i in drop_first_columns:
 # st.dataframe(df_dummies)
 
 # st.write(df_dummies.columns)
-output = lrc.predict(df_dummies)
-st.write(output)
 
-if output == 1:
-    st.write("Approved")
-else:
-    st.write("Not approved")
+
+
+
+# output = lrc.predict(df_dummies)
+# st.write(output)
+
+# if output == 1:
+#     st.write("Approved")
+# else:
+#     st.write("Not approved")
+
+
+# **Predict Button**
+if st.button("Predict"):
+    # Make Predictions
+    output = lrc.predict(df_dummies)[0]
+    probabilities = lrc.predict_proba(df_dummies)[0]  # Get Probabilities for both classes
+
+    # Display Result
+    if output == 1:
+        st.success("✅ **Approved**")
+    else:
+        st.error("❌ **Not Approved**")
+
+    # **Probability Bar Chart**
+    st.write("### Prediction Probability")
+    fig, ax = plt.subplots()
+    ax.bar(["Not Approved (0)", "Approved (1)"], probabilities, color=['red', 'green'])
+    ax.set_ylim(0, 1)
+    ax.set_ylabel("Probability")
+    st.pyplot(fig)
+
+
