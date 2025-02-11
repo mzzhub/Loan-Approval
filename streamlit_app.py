@@ -142,7 +142,7 @@ if predict_button:
     st.subheader("Loan Approval Probability")
     df_probs = pd.DataFrame({
         "Outcome": ["Not Eligible", "Eligible"],
-        "Probability": probabilities
+        "Probability Percentage": probabilities
     })
 
     st.dataframe(
