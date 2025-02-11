@@ -141,7 +141,7 @@ if predict_button:
     # Display probability scores using ProgressColumn
     st.subheader("Loan Approval Probability")
     df_probs = pd.DataFrame({
-        "Outcome": ["Not Approved", "Approved"],
+        "Outcome": ["Not Eligible", "Eligible"],
         "Probability": probabilities
     })
 
