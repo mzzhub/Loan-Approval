@@ -125,6 +125,8 @@ col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
     predict_button = st.button("Predict", use_container_width=True)
 
+st.write("")  # Adds a blank line
+
 if predict_button:
     # Make predictions
     output = lrc.predict(df_dummies)
