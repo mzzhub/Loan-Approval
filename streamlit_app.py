@@ -127,11 +127,6 @@ with col2:
 
 st.write("")  # Adds a blank line
 
-st.warning('This is a warning', icon="⚠️")
-st.info('This is a purely informational message', icon="ℹ️")
-e = RuntimeError("This is an exception of type RuntimeError")
-st.exception(e)
-
 if predict_button:
     # Make predictions
     output = lrc.predict(df_dummies)
