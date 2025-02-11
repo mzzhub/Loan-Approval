@@ -37,8 +37,8 @@ dict_input = {
 
 df_input = pd.DataFrame([dict_input])
 
-st.write("From dictonary")
-st.dataframe(df_input)
+# st.write("From dictonary")
+# st.dataframe(df_input)
 
 object_columns = df_input.select_dtypes(include = ["object"]).columns
 df_dummies = pd.get_dummies(df_input, columns = object_columns)
@@ -54,8 +54,8 @@ feature_columns = ['person_age', 'person_income', 'person_emp_exp', 'loan_amnt',
        'previous_loan_defaults_on_file_Yes']
 
 df_dummies = df_dummies.reindex(columns = feature_columns, fill_value = 0)
-st.write("after reindex")
-st.dataframe(df_dummies)
+# st.write("after reindex")
+# st.dataframe(df_dummies)
 
 # for col in feature_columns:
 #     if col not in df_dummies.columns:
@@ -69,13 +69,13 @@ for i in drop_first_columns:
     if i in df_dummies.columns:
         df_dummies = df_dummies.drop(i, axis = 1)
 
-st.write("after for loop 02")
-st.dataframe(df_dummies)
+# st.write("after for loop 02")
+# st.dataframe(df_dummies)
 
-st.write("after dummies")
-st.dataframe(df_dummies)
+# st.write("after dummies")
+# st.dataframe(df_dummies)
 
-st.write(df_dummies.columns)
+# st.write(df_dummies.columns)
 output = lrc.predict(df_dummies)
 st.write(output)
 
