@@ -90,29 +90,70 @@ for i in drop_first_columns:
 #     st.write("Not approved")
 
 
-# **Predict Button**
-if st.button("Predict"):
-    # Make Predictions
-    output = lrc.predict(df_dummies)[0]
-    probabilities = lrc.predict_proba(df_dummies)[0]  # Get Probabilities for both classes
+# # **Predict Button**
+# if st.button("Predict"):
+#     # Make Predictions
+#     output = lrc.predict(df_dummies)[0]
+#     probabilities = lrc.predict_proba(df_dummies)[0]  # Get Probabilities for both classes
 
-    # Display Result
+#     # Display Result
+#     if output == 1:
+#         st.success("✅ **Approved**")
+#     else:
+#         st.error("❌ **Not Approved**")
+
+#     # **Probability Bar Chart**
+#     st.write("### Prediction Probability")
+#     fig, ax = plt.subplots()
+#     ax.bar(["Not Approved (0)", "Approved (1)"], probabilities, color=['red', 'green'])
+#     ax.set_ylim(0, 1)
+#     ax.set_ylabel("Probability")
+#     st.pyplot(fig)
+
+#     output_placeholder = st.empty()  # Creates an empty placeholder
+
+#     if st.button("Clear"):
+#         output_placeholder.empty()  # Clears the displayed prediction
+
+
+
+# Center align buttons
+col1, col2, col3 = st.columns([1, 2, 1])
+
+with col2:
+    predict_button = st.button("Predict", use_container_width=True)
+    clear_button = st.button("Clear", use_container_width=True)
+
+if predict_button:
+    # Make predictions
+    output = lrc.predict(df_dummies)
+    probabilities = lrc.predict_proba(df_dummies)[0]  # Get probability scores for both classes
+
+    # Display result
     if output == 1:
-        st.success("✅ **Approved**")
+        st.success("✅ **Loan Approved!**")
     else:
-        st.error("❌ **Not Approved**")
+        st.error("❌ **Loan Not Approved**")
 
-    # **Probability Bar Chart**
-    st.write("### Prediction Probability")
-    fig, ax = plt.subplots()
-    ax.bar(["Not Approved (0)", "Approved (1)"], probabilities, color=['red', 'green'])
-    ax.set_ylim(0, 1)
-    ax.set_ylabel("Probability")
-    st.pyplot(fig)
+    # Display probability scores using ProgressColumn
+    st.subheader("Loan Approval Probability")
+    df_probs = pd.DataFrame({
+        "Outcome": ["Not Approved", "Approved"],
+        "Probability": probabilities
+    })
 
-    output_placeholder = st.empty()  # Creates an empty placeholder
+    st.dataframe(
+        df_probs.set_index("Outcome"),
+        column_config={
+            "Probability": st.column_config.ProgressColumn(
+                "Probability",
+                format="%.2f",
+                min_value=0,
+                max_value=1
+            )
+        },
+        use_container_width=True
+    )
 
-    if st.button("Clear"):
-        output_placeholder.empty()  # Clears the displayed prediction
-
-
+    if clear_button:
+        st.experimental_rerun()  # Clears predictions by rerunning the app
