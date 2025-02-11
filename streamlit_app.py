@@ -110,9 +110,9 @@ if st.button("Predict"):
     ax.set_ylabel("Probability")
     st.pyplot(fig)
 
-output_placeholder = st.empty()  # Creates an empty placeholder
+    output_placeholder = st.empty()  # Creates an empty placeholder
 
-if st.button("Clear"):
-    output_placeholder.empty()  # Clears the displayed prediction
+    if st.button("Clear"):
+        output_placeholder.empty()  # Clears the displayed prediction
 
 
