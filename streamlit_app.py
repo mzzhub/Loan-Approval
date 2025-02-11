@@ -134,9 +134,9 @@ if predict_button:
 
     # Display result
     if output == 1:
-        st.success("✅ **Loan Approved!**")
+        st.success("✅ **Eligible**")
     else:
-        st.error("❌ **Loan Not Approved**")
+        st.error("❌ **Not Eligible**")
 
     # Display probability scores using ProgressColumn
     st.subheader("Loan Approval Probability")
