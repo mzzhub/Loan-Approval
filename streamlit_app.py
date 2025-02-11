@@ -35,6 +35,9 @@ dict_input = {
     'previous_loan_defaults_on_file' : previous_defaults
     }
 
+for i in dict_input.values:
+    st.write(type(i))
+
 df_input = pd.DataFrame([dict_input])
 
 st.write("From dictonary")
