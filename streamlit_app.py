@@ -142,13 +142,13 @@ if predict_button:
     st.subheader("Loan Approval Probability")
     df_probs = pd.DataFrame({
         "Outcome": ["Not Eligible", "Eligible"],
-        "Probability": probabilities
+        "Probability Percentage": probabilities
     })
 
     st.dataframe(
         df_probs.set_index("Outcome"),
         column_config={
-            "Probability": st.column_config.ProgressColumn(
+            "Probability Percentage": st.column_config.ProgressColumn(
                 "Probability",
                 format="%.2f",
                 min_value=0,
