@@ -134,10 +134,9 @@ if predict_button:
 
     # Display result
     if output == 1:
-        st.markdown("<h3 style='text-align: center;'>✅ **Eligible**</h3>", unsafe_allow_html=True)
+        st.success("✅ **Eligible**")
     else:
-        st.markdown("<h3 style='text-align: center;'>❌ **Not Eligible**</h3>", unsafe_allow_html=True)
-
+        st.error("❌ **Not Eligible**")
 
     # Display probability scores using ProgressColumn
     st.subheader("Loan Approval Probability")
