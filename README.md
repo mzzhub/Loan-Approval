@@ -48,4 +48,5 @@ streamlit run streamlit_app.py
 Contributions are welcome! If you'd like to improve this project, feel free to fork the repository and submit a pull request.
 
 ## 🧑‍💻 Try the app.
-[![image]()]()
+[![image](![image](https://github.com/user-attachments/assets/c80a0601-1e52-47a3-956c-8a52ffc30c33)
+)](https://loan-for-me.streamlit.app/)
