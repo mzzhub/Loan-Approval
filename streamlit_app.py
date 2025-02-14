@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 import matplotlib.pyplot as plt
 
-st.title('Loan Eligiblity Test')
+st.title('🏦 Loan Eligiblity Test 💵')
 
 with open("kaggle_model.pkl", "rb") as f:
     lrc = pickle.load(f)
