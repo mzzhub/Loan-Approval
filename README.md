@@ -16,8 +16,8 @@ To set up and run the application locally, follow these steps:
 
 ### 1️⃣ Clone the repository:
 ```bash
- git clone https://github.com/yourusername/loan-eligibility-test.git
- cd loan-eligibility-test
+ git clone https://github.com/mzzhub/Loan-Approval.git
+ cd Loan-Approval
 ```
 
 ### 2️⃣ Create a virtual environment (optional but recommended):
